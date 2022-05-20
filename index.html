@@ -4,20 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/ico/one-piece ico.ico" type="image/x-icon">
     <title>Quantos faltam</title>
     <style>
+        *{
+            margin: 0px;
+        }
+
         body{
-            background-image: url(one-piece-background.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
+            background-color: red;
         }
 
         main{
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.753);
-            height: 150px;
+            background-color: blue;
+            padding: 10px;
             font-weight: bold;
+        }
+
+        h1{
+            padding: 10px;
+        }
+
+        p{
+            padding: 10px;
         }
     </style>
 </head>
@@ -35,7 +46,9 @@
         let faltam = atual - Number(ep.value)
         let res = window.document.getElementById('res')
 
-        if(faltam <= 200){
+            if (faltam <= -1){
+                res.innerHTML = (`Coloque um valor certo idiota`)
+        }else if(faltam <= 200){
             res.innerHTML = (`Faltam <strong id="strong">${faltam}</strong> episodios para chegar nos semanais de one piece`)
 
             let strong = window.document.getElementById('strong')
