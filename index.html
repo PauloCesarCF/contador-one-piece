@@ -10,14 +10,9 @@
         *{
             margin: 0px;
         }
-        
-        body{
-            background-image: url(assets/img/background/one-piece-background.jpg);
-            background-position-x: center;
-            background-position-y: 30%;
-        }
 
         main{
+            background-color: blue;
             font-family: Arial, Helvetica, sans-serif;
             text-align: center;
             padding: 10px;
@@ -31,12 +26,6 @@
         p{
             padding: 10px;
         }
-        
-        @media (max-width: 620){
-            body{
-                background-image: url(assets/img/background/one-piece-background-mobile.jpg;)
-            }
-        }
     </style>
 </head>
 <body>
@@ -49,7 +38,7 @@
     <script>
         function contar(){
         let ep = window.document.getElementById('ep')
-        let atual = 1017
+        let atual = 1018
         let faltam = atual - Number(ep.value)
         let res = window.document.getElementById('res')
 
