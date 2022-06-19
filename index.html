@@ -11,10 +11,17 @@
             margin: 0px;
             padding: 0px;
         }
+        
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         .container{
             background-color: blue;
-            margin: auto;
             width: 50vw;
             border-radius: 5px;
             font-family: Arial, Helvetica, sans-serif;
@@ -44,7 +51,7 @@
     <script>
         function contar(){
         let ep = window.document.getElementById('ep')
-        let atual = 1021
+        let atual = 1022
         let faltam = atual - Number(ep.value)
         let res = window.document.getElementById('res')
 
