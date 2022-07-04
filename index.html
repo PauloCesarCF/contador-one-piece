@@ -5,76 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/img/ico/one-piece ico.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Quantos faltam</title>
-    <style>
-        *{
-            margin: 0px;
-            padding: 0px;
-        }
-        
-        body{
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container{
-            background-color: blue;
-            width: 50vw;
-            border-radius: 5px;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-        }
-
-        h1{
-            padding: 10px;
-        }
-
-        p{
-            padding: 10px;
-        }
-    </style>
 </head>
 <body>
     <main class="container">
         <div class="board">
             <h1>Quantos episódios faltam one piece</h1>
-            <p>Digíte o episódio atual: <input type="number" name="" id="ep"> <input type="button" value="contar" onclick="contar()"></p>
+            <p>Digíte o episódio atual: 
+            <input type="number" name="" id="ep"> 
+            <input type="button" value="contar" class="check"></p>
             <p id="res"> </p>
         </div>
     </main>
-
-    <script>
-        function contar(){
-        let ep = window.document.getElementById('ep')
-        let atual = 1022
-        let faltam = atual - Number(ep.value)
-        let res = window.document.getElementById('res')
-
-            if (faltam <= -1){
-                res.innerHTML = (`Coloque um valor certo idiota`)
-        }else if(faltam <= 200){
-            res.innerHTML = (`Faltam <strong id="strong">${faltam}</strong> episodios para chegar nos semanais de one piece`)
-
-            let strong = window.document.getElementById('strong')
-            strong.style.color = "green"
-        }else if(faltam >= 201 && faltam <= 500){
-            res.innerHTML = (`Faltam <strong id="strong">${faltam}</strong> episodios para chegar nos semanais de one piece`)
-
-            let strong = window.document.getElementById('strong')
-            strong.style.color = "orange"
-        }else if(faltam >= 501 && faltam <= atual){
-            res.innerHTML = (`Faltam <strong id="strong">${faltam}</strong> episodios para chegar nos semanais de one piece`)
-
-            let strong = window.document.getElementById('strong')
-            strong.style.color = "red"
-        }
-        }
-        
-    </script>
 </body>
 </html>
