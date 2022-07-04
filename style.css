@@ -24,32 +24,15 @@ body{
 
 @keyframes teste{
     0%{
-        border: 3px solid blue;box-shadow:
-        2.8px 2.8px 2.2px rgba(0, 0, 0, 0.082),
-        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.117),
-        12.5px 12.5px 10px rgba(0, 0, 0, 0.145),
-        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.173),
-        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.208),
-        100px 100px 80px blue
+        border: 3px solid blue;
     }100%{
-        border: 3px solid violet;box-shadow:
-        3.7px 2.7px 10.3px violet,
-        8.2px 6px 20.3px rgba(0, 0, 0, 0.192),
-        13.7px 10px 29.9px rgba(0, 0, 0, 0.237),
-        20.7px 15.1px 39.2px rgba(0, 0, 0, 0.275),
-        29.8px 21.7px 48.4px rgba(0, 0, 0, 0.31),
-        42.2px 30.7px 57.8px rgba(0, 0, 0, 0.345),
-        60.1px 43.8px 68.3px rgba(0, 0, 0, 0.383),
-        88.5px 64.5px 82.2px violet,
-        140.6px 102.5px 108.5px violet,
-        262px 191px 189px violet
-      ;
-      
+        border: 3px solid violet;
     }
 }
 
 h1{
     padding: 10px;
+    font-size: 25px
 }
 
 p{

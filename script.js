@@ -33,21 +33,21 @@ const tell = () => {
     }else if(date >= vinteNove && date <= trinta){
         current = 1029
     }else if(date >= trinta && date <= trintaUm){
-        current = 1029
+        current = 1030
     }else if(date >= trintaUm && date <= trintaDois){
-        current = 1029
+        current = 1031
     }else if(date >= trintaDois && date <= trintaTres){
-        current = 1029
+        current = 1032
     }else if(date >= trintaTres && date <= trintaQuatro){
-        current = 1029
+        current = 1033
     }else if(date >= trintaQuatro && date <= trintaCinco){
-        current = 1029
+        current = 1034
     }else if(date >= trintaCinco && date <= trintaSeis){
-        current = 1029
+        current = 1035
     }else if(date >= trintaSeis && date <= trintaSete){
-        current = 1029
+        current = 1036
     }else if(date >= trintaSete && date <= trintaOito){
-        current = 1029
+        current = 1037
     }
 
     const missingEpisodes = current - Number(epUser.value)
@@ -55,13 +55,23 @@ const tell = () => {
 
     if (error({ missingEpisodes, current })){
         res.innerHTML = ("Coloque um valor certo idiota")
+    }else if(sucess({ current, missingEpisodes })){
+        res.innerHTML = "Parabéns! você está nos episódios semanais de one piece"
     }else {
         res.innerHTML = (`Faltam ${missingEpisodes} episodios para chegar nos semanais de one piece`)
     }
 }
 
 const error = ({ missingEpisodes, current }) => {
-    if (missingEpisodes <= 1 || missingEpisodes === current){
+    if (missingEpisodes <= -1){
+        return true
+    }else{
+        return false
+    }
+}
+
+const sucess = ({ current, missingEpisodes }) => {
+    if (missingEpisodes === 0){
         return true
     }else{
         return false
