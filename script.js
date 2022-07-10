@@ -1,68 +1,75 @@
-const checkEp = window.document.querySelector('.check')
-const epUser = window.document.getElementById('ep')
+const checkEp = window.document.querySelector('.check');
+const epUser = window.document.getElementById('ep');
 
 const tell = () => {
-    let current = 1023
-    const vinteQuatro = new Date('july 9 2022 23:00:00');
-    const vinteCinco = new Date('july 16 2022 23:00:00');
-    const vinteSeis = new Date('july 23 2022 23:00:00');
-    const vinteSete = new Date('july 30 2022 23:00:00');
-    const vinteOito = new Date('august 6 2022 23:00:00');
-    const vinteNove = new Date('august 13 2022 23:00:00');
-    const trinta = new Date('august 20 2022 23:00:00');
-    const trintaUm = new Date('august 27 2022 23:00:00');
-    const trintaDois = new Date('september 3 2022 23:00:00');
-    const trintaTres = new Date('september 10 2022 23:00:00');
-    const trintaQuatro = new Date('september 17 2022 23:00:00');
-    const trintaCinco = new Date('september 24 2022 23:00:00');
-    const trintaSeis = new Date('october 1 2022 23:00:00');
-    const trintaSete = new Date('october 8 2022 23:00:00');
-    const trintaOito = new Date('october 15 2022 23:00:00');
-    const date = new Date().getMinutes();
+    const date = new Date();
+    const month = String(date.getMonth() + 1);
+    const day = String(date.getDate()).padStart(2 , '0');
+    const year = String(date.getFullYear());
+    const hours = String(date.getHours());
+    const minutes = String(date.getMinutes());
+    const seconds = String(date.getSeconds());
 
-    if(date >= vinteQuatro && date <= vinteCinco){
+    const CurrentDate = `${month} ${day} ${year} ${hours}:${minutes}:${seconds}`;
+
+    let current = 0
+
+    if(CurrentDate > '6 10 2022 23:00:00' && CurrentDate < '7 16 2022 22:59:59'){
         current = 1024
-    }else if(date >= vinteCinco && date <= vinteSeis){
+    }
+    else if(CurrentDate >= '7 16 2022 23:00:00' && CurrentDate <= '7 23 2022 22:59:59'){
         current = 1025
-    }else if(date >= vinteSeis && date <= vinteSete){
+    }
+    else if(CurrentDate >= '7 23 2022 23:00:00' && CurrentDate <= '7 30 2022 22:59:59'){
         current = 1026
-    }else if(date >= vinteSete && date <= vinteOito){
+    }
+    else if(CurrentDate >= '7 30 2022 23:00:00' && CurrentDate <= '8 6 2022 22:59:59'){
         current = 1027
-    }else if(date >= vinteOito && date <= vinteNove){
+    }
+    else if(CurrentDate >= '8 6 2022 23:00:00' && CurrentDate <= '8 13 2022 22:59:59'){
         current = 1028
-    }else if(date >= vinteNove && date <= trinta){
+    }
+    else if(CurrentDate >= '8 13 2022 23:00:00' && CurrentDate <= '8 20 2022 22:59:59'){
         current = 1029
-    }else if(date >= trinta && date <= trintaUm){
+    }
+    else if(CurrentDate >= '8 20 2022 23:00:00' && CurrentDate <= '8 27 2022 22:59:59'){
         current = 1030
-    }else if(date >= trintaUm && date <= trintaDois){
+    }
+    else if(CurrentDate >= '8 27 2022 23:00:00' && CurrentDate <= '9 3 2022 22:59:59'){
         current = 1031
-    }else if(date >= trintaDois && date <= trintaTres){
+    }
+    else if(CurrentDate >= '9 3 2022 23:00:00' && CurrentDate <= '9 10 2022 22:59:59'){
         current = 1032
-    }else if(date >= trintaTres && date <= trintaQuatro){
+    }
+    else if(CurrentDate >= '9 10 2022 23:00:00' && CurrentDate <= '9 17 2022 22:59:59'){
         current = 1033
-    }else if(date >= trintaQuatro && date <= trintaCinco){
+    }
+    else if(CurrentDate >= '9 17 2022 23:00:00' && CurrentDate <= '9 24 2022 22:59:59'){
         current = 1034
-    }else if(date >= trintaCinco && date <= trintaSeis){
+    }
+    else if(CurrentDate >= '9 24 2022 23:00:00' && CurrentDate <= '10 1 2022 22:59:59'){
         current = 1035
-    }else if(date >= trintaSeis && date <= trintaSete){
+    }
+    else if(CurrentDate >= '10 1 2022 23:00:00' && CurrentDate <= '10 8 2022 22:59:59'){
         current = 1036
-    }else if(date >= trintaSete && date <= trintaOito){
+    }
+    else if(CurrentDate >= '10 8 2022 23:00:00' && CurrentDate <= '10 15 2022 22:59:59'){
         current = 1037
     }
 
-    const missingEpisodes = current - Number(epUser.value)
-    const res = window.document.getElementById('res')
+    const missingEpisodes = current - Number(epUser.value);
+    const res = window.document.getElementById('res');
 
-    if (error({ missingEpisodes, current })){
-        res.innerHTML = ("Coloque um valor certo idiota")
-    }else if(sucess({ current, missingEpisodes })){
+    if (error({ missingEpisodes })){
+        res.innerHTML = ("Coloque um valor certo idiota");
+    }else if(sucess({ missingEpisodes })){
         res.innerHTML = "Parabéns! você está nos episódios semanais de one piece"
     }else {
-        res.innerHTML = (`Faltam ${missingEpisodes} episodios para chegar nos semanais de one piece`)
+        res.innerHTML = (`Faltam ${missingEpisodes} episodios para chegar nos semanais de one piece`);
     }
 }
 
-const error = ({ missingEpisodes, current }) => {
+const error = ({ missingEpisodes}) => {
     if (missingEpisodes <= -1){
         return true
     }else{
@@ -70,7 +77,7 @@ const error = ({ missingEpisodes, current }) => {
     }
 }
 
-const sucess = ({ current, missingEpisodes }) => {
+const sucess = ({missingEpisodes}) => {
     if (missingEpisodes === 0){
         return true
     }else{
@@ -78,4 +85,4 @@ const sucess = ({ current, missingEpisodes }) => {
     }
 }
 
-checkEp.addEventListener('click', () => tell())
+checkEp.addEventListener('click', () => tell());
