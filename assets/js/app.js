@@ -1,6 +1,10 @@
 const checkEp = window.document.querySelector('.check');
 const epUser = window.document.getElementById('ep');
 
+const error = ( missingEpisodes, current ) => missingEpisodes <= -1 || missingEpisodes > current
+
+const sucess = ( missingEpisodes ) => missingEpisodes === 0
+
 const tell = () => {
     const date = new Date();
     const month = String(date.getMonth() + 1);
@@ -60,28 +64,12 @@ const tell = () => {
     const missingEpisodes = current - Number(epUser.value);
     const res = window.document.getElementById('res');
 
-    if (error({ missingEpisodes })){
+    if (error( missingEpisodes, current)){
         res.innerHTML = ("Coloque um valor certo idiota");
-    }else if(sucess({ missingEpisodes })){
+    }else if(sucess( missingEpisodes )){
         res.innerHTML = "Parabéns! você está nos episódios semanais de one piece"
     }else {
         res.innerHTML = (`Faltam ${missingEpisodes} episodios para chegar nos semanais de one piece`);
-    }
-}
-
-const error = ({ missingEpisodes}) => {
-    if (missingEpisodes <= -1){
-        return true
-    }else{
-        return false
-    }
-}
-
-const sucess = ({missingEpisodes}) => {
-    if (missingEpisodes === 0){
-        return true
-    }else{
-        return false
     }
 }
 
