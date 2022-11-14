@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/img/ico/one-piece ico.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/app.js" defer></script>
+    <link rel="shortcut icon" href="assets/one-piece-ico.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Quantos faltam</title>
 </head>
+
 <body>
     <main class="container">
         <div class="board">
             <h1>Quantos episódios faltam one piece</h1>
             <label for episode>Digíte o episódio atual: </label>
-            <input type="number" name="episode" id="ep"> 
+            <input type="number" name="episode" id="ep">
             <button value="contar" class="check">
                 confirmar
             </button>
             <p id="res"> </p>
+            <small>Pode demorar um pouco para ser adicionado e episódio atual</small>
         </div>
     </main>
 </body>
+
 </html>
